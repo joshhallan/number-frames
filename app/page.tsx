@@ -4,7 +4,6 @@ import { useState } from "react";
 import TenFrame from "@/components/TenFrame";
 
 export default function Home() {
-  // Use objects for clearer state. UUIDs are cleaner than timestamps.
   const [frames, setFrames] = useState([{ id: crypto.randomUUID() }]);
 
   const addFrame = () => {
@@ -18,27 +17,31 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-zinc-50 py-12 dark:bg-zinc-950">
-      <div className="mx-auto max-w-2xl px-4 mb-8 flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-            Digital Ten Frames
-          </h1>
-          <p className="text-sm text-zinc-500">Total Frames: {frames.length}</p>
+    <main className="min-h-screen bg-zinc-50 pb-12 dark:bg-zinc-950">
+      <div className="sticky top-0 z-50 w-full bg-zinc-50/80 backdrop-blur-md border-b border-zinc-200 dark:bg-zinc-950 dark:border-zinc-800">
+        <div className="mx-auto max-w-2xl px-6 py-4 flex justify-between items-center">
+          <div>
+            <h1 className="text-xl font-bold text-zinc-800 dark:text-zinc-100">
+              Digital Ten Frames
+            </h1>
+            <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+              Total Frames: {frames.length}
+            </p>
+          </div>
+          
+          <button
+            onClick={addFrame}
+            className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 hover:bg-blue-500 active:scale-95 transition-all"
+          >
+            + Add Frame
+          </button>
         </div>
-        
-        <button
-          onClick={addFrame}
-          className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors"
-        >
-          + Add Frame
-        </button>
       </div>
 
-      <div className="space-y-4">
+      {/* Frame List - Added pt-8 to give space below the sticky header */}
+      <div className="space-y-6 pt-8">
         {frames.map((frame, index) => (
           <div key={frame.id}>
-            {/* We pass the index + 1 to the frame so it knows its number */}
             <TenFrame 
               frameNumber={index + 1} 
               onDelete={() => removeFrame(frame.id)} 
