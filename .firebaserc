@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "number-frames"
-  }
+  },
+  "targets": {
+    "number-frames": {
+      "hosting": {
+        "frames-app": [
+          "number-frames"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
