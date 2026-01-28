@@ -24,6 +24,7 @@ export default function Home() {
             <h1 className="text-xl font-bold text-zinc-800 dark:text-zinc-100">
               Digital Ten Frames
             </h1>
+            <h1>Test for deploy</h1>
             <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
               Total Frames: {frames.length}
             </p>
