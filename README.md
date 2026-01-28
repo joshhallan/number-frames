@@ -18,3 +18,15 @@ After finding out that my son was using paper-based number frames at school, I n
 -   **Deployment:** Firebase Multi-site Hosting
     
 -   **State Management:** React Hooks (`useState`) with unique UUID identification for frame stability.
+
+## To run locally
+1. **Prerequisites:** Ensure you have **Node 22** installed.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run development server** 
+    ```bash
+    npm run dev
+    ```
+4. Open http://localhost:3000 with your browser to see the result.
