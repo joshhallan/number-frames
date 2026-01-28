@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-// We add onDelete to the component properties
 interface TenFrameProps {
   onDelete: () => void;
   frameNumber: number;
@@ -21,7 +20,7 @@ export default function TenFrame({ onDelete, frameNumber }: TenFrameProps) {
 
   return (
     <div className="mx-auto max-w-2xl p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm mb-6">
-      {/* Header with obvious actions */}
+      {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Frame {frameNumber}</h3>
         
@@ -30,7 +29,7 @@ export default function TenFrame({ onDelete, frameNumber }: TenFrameProps) {
             onClick={clearFrame}
             className="px-3 py-1 text-xs font-bold text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded transition-colors"
           >
-            RESET
+            CLEAR
           </button>
           <button 
             onClick={onDelete}
